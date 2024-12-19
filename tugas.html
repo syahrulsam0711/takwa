@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penjualan Lobster dan Telur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<style>
+    #map {
+        height: 500px;
+    }
+</style>
+
+<body class="bg-gray-100 overflow-hidden">
+
+    <!-- Navbar -->
+    <nav class="bg-green-900 p-4 shadow-lg fixed top-0 w-full z-50">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="text-yellow-500 font-bold text-2xl">
+                <a href="#">Rahmat Ilahi</a>
+            </div>
+            <ul class="flex space-x-6 text-white">
+                <li><a href="#home" class="hover:text-yellow-400">Home</a></li>
+                <li><a href="#tentang" class="hover:text-yellow-400">Tentang</a></li>
+                <li><a href="#daftar" class="hover:text-yellow-400">Daftar</a></li>
+                <li><a href="#detail" class="hover:text-yellow-400">Detail</a></li>
+                <li><a href="#kontak" class="hover:text-yellow-400">Kontak</a></li>
+                <li><a href="#alamat" class="hover:text-yellow-400">Alamat</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen bg-green-800 content-center text-white py-20">
+        <div class="container mx-auto px-6 flex items-center justify-between"data-aos="flip-left" data-aos-duration="1500" data-aos-delay="300" >
+            <div class="w-1/2">
+                <h1 class="text-4xl font-bold leading-tight mb-4"  data-aos="flip-left" data-aos-duration="1500" data-aos-delay="300">Selamat Datang di Website kami Penjualan Lobster dan Telur!</h1>
+                <p class="text-lg"  data-aos="flip-left"data-aos-duration="1500" data-aos-delay="300">Kami menyediakan lobster segar dan telur berkualitas tinggi. Segera dapatkan produk
+                    terbaik dari kami.</p>
+                <!-- Button Kunjungi Kami -->
+                <a href="https://wa.me/6282188883108?text=Saya Ingin Beli"
+                    class="inline-block mt-6 py-1.5 px-6 bg-yellow-500 text-white text-lg font-semibold rounded-lg hover:bg-yellow-600 transition duration-300">Beli</a>
+                <a href="#tentang"
+                    class="inline-block mt-6 py-1 px-6 bg-transparent border-2 border-white text-white text-lg font-semibold rounded-lg hover:bg-yellow-500 transition duration-300">Jelajahi</a>
+            </div>
+            <div class="w-1/2">
+                <img src="./gambar1.png" alt="Lobster" class="rounded-lg">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="tentang" class="py-20 h-screen items-center justify-center content-center">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+            <div class="w-1/3" data-aos="flip-down"  data-aos-duration="1000" data-aos-delay="200">
+                <img src="./telur4.png" alt="Telur" class="rounded-lg w-42">
+            </div>
+            <div class="w-1/2">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-4" data-aos="flip-down"  data-aos-duration="1000" data-aos-delay="200">Tentang Kami</h2>
+                <p class="text-lg text-gray-700" data-aos="flip-down"  data-aos-duration="1000" data-aos-delay="200">Kami adalah penyedia lobster segar dan telur yang berkualitas.
+                    Menyediakan produk
+                    unggulan dengan harga yang bersaing. Tujuan kami adalah memberikan layanan terbaik dan memenuhi
+                    kebutuhan
+                    pelanggan dengan produk segar dan berkualitas tinggi.</p>
+                    <br>
+                    <p class="text-lg text-gray-700" data-aos="flip-down"  data-aos-duration="1000" data-aos-delay="200">Di sini, kami percaya bahwa kepuasan pelanggan adalah yang paling utama. Kami selalu terbuka untuk masukan dan saran untuk meningkatkan layanan kami. 
+            Jangan ragu untuk menghubungi kami melalui halaman Kontak.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daftar Produk Section -->
+    <section id="daftar" class="py-20 bg-green-700">
+        <div class="container mx-auto px-6"><br>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-green-800 p-6 rounded-lg shadow-lg"data-aos="flip-right" data-aos-duration="1500" data-aos-delay="300">
+                    <img src="./lobster.jpg" alt="Lobster"
+                        class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-yellow-500">Lobster Mati</h3>
+                    <p class="text-white mt-2">Lobster segar dan berkualitas, daging yang lembut, manis, dan kaya
+                                rasa. Siap menjadi hidangan spesial Anda.</p>
+                                <strong class="text-white">Harga:</strong> <strong class="text-white">
+                            <br>1 kg: Rp 250.000
+                            <br>2 Kg: Rp 500.000
+                            <br>3 Kg: Rp 750.000
+                            <br>
+                            </strong>
+                    <button class="mt-4 w-full bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-600"><a href="https://wa.me/6285242597386">Beli
+                        Sekarang</a></button>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-green-800 p-6 rounded-lg shadow-lg"data-aos="flip-up" data-aos-duration="1500" data-aos-delay="300">
+                    <img src="./th.jpg" alt="Telur"
+                        class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-yellow-500">Telur Ayam Ras</h3>
+                    <p class="text-white mt-2">Telur ayam segar dan berkualitas, di produksi dari peternakan ayam
+                                sendiri, dijamin segar dan aman.</p>
+                                 <strong class="text-white">
+                                    Harga:
+                                    <br>1 Rak Kecil: Rp 49.000
+                            <br>1 Rak Besar: Rp 52.000
+                            <br>1 Ikat: Rp 422.000
+                            <br>
+                                </strong>
+                            
+                    <button class="mt-4 w-full bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-600"><a href="https://wa.me/6285242597386">Beli
+                        Sekarang</a></button>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-green-800 p-6 rounded-lg shadow-lg"data-aos="flip-left" data-aos-duration="1500" data-aos-delay="300">
+                    <img src="./lobster.jpg" alt="Lobster dan Telur"
+                        class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-yellow-500">Lobster Hidup</h3>
+                    <p class="text-white mt-2">Lobster segar dan berkualitas, daging yang lembut, manis, dan kaya
+                                rasa. Siap menjadi hidangan spesial Anda.</p></p>
+                        <strong class="text-white">Harga:</strong> <strong class="text-white">
+                            <br>1 kg: Rp 350.000
+                            <br>2 Kg: Rp 700.000
+                            <br>3 Kg: Rp 1.050.000
+                            <br>
+                        </strong>
+                            
+                    <button class="mt-4 w-full bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-600"><a href="https://wa.me/6285242597386">Beli
+                        Sekarang</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Sections: Detail, Kontak, Peta -->
+    <section id="detail" class="py-20 h-screen content-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-8 text-center" data-aos="flip-left" data-aos-duration="1500" data-aos-delay="300">Detail Produk</h2>
+            <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="flip-left" data-aos-duration="1500" data-aos-delay="300">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8" data-aos="flip-left" data-aos-duration="1500" data-aos-delay="300">
+                    <!-- Alamat Toko -->
+                    <div class="bg-gray-100 p-4 text-center" data-aos="flip-left" data-aos-duration="1500" data-aos-delay="300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Alamat Toko</h3>
+                        <p class="text-gray-600" data-aos="flip-left" data-aos-duration="1500" data-aos-delay="300">
+                            Jln. Yos Sudarso No.5 <br><br>
+                            Kota Benteng, Kecamatan Benteng, Kabupaten Kepulauan Selayar 98255
+                        </p>
+                    </div>
+
+                    <!-- Jam Operasi -->
+                    <div class="bg-gray-100 p-4 text-center">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Jam Operasi</h3>
+                        <p class="text-gray-600">
+                            Setiap Hari: <br> 08:00 - 12:00 <br> 15:00 - 21:00
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="kontak" class="py-20 bg-green-700 h-screen content-center">
+        <div class="container mx-auto px-6"  data-aos="flip-down"  data-aos-duration="1500" data-aos-delay="300">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Formulir Kontak -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Kirim Pesan</h3>
+                    <form action="#" method="POST">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700">Nama</label>
+                            <input type="text" id="name" name="name"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700">Email</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700">Pesan</label>
+                            <textarea id="message" name="message" rows="4"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                required></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-600 focus:outline-none">Kirim
+                            Pesan</button>
+                    </form>
+                </div>
+
+                <!-- Info Kontak -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Informasi Kontak</h3>
+                    <ul class="space-y-4 text-gray-600">
+                        <li>
+                            <strong>Alamat:</strong>  Jln. Yos Sudarso No.5  Kota Benteng, Kecamatan Benteng, Kabupaten Kepulauan Selayar 98255
+                        </li>
+                        <li>
+                            <p class="font-bold">Whatsapp : <a href="https://wa.me/6282188883108"
+                                    class="text-blue-700">(+6282188883108)   (+6285242597386)
+                                </a></p>
+                        </li>
+                        <li>
+                           
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="alamat" class="py-20 h-screen">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4 text-center">Alamat Kami</h2>
+            <div id="map"></div>
+        </div>
+    </section>
+    <footer class="py-4 text-center bg-green-900 fixed bottom-0 w-full">
+        <p class="font-semibold text-white">Rahmat ilahi 2024 - Takwa</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var map = L.map('map', {
+                center: [-6.116937, 120.457277],
+                zoom: 18,
+                minZoom: 15,
+                maxZoom: 20
+            });
+
+            
+            const defaultStyle1 = {
+                color: "#f0f0f0",
+                weight: 1.5,
+                opacity: 0.8,
+                fillColor: "#45F450",
+                fillOpacity: 1,
+            };
+
+            const defaultStyle2 = {
+                color: "#f0f0f0",
+                weight: 1.5,
+                opacity: 0.8,
+                fillColor: "#45F450",
+                fillOpacity: 1,
+            };
+
+            const umkmData = {
+                name: "Rahmat Ilahi",
+                rating: "4.0",
+                reviews: 1,
+                category: "Jual Lobster & Telur ayam Ras",
+                buka: "Buka 08:00 Tutup pukul 21.00",
+                alamat: "Jl. yos sudarso no.5, Benteng, Kec. Benteng, Sulawesi Selatan 92812",
+                phone: "085242597386",
+                coords: [-6.116937, 120.457277],
+                imageUrl: "rumah.jpg",
+                imageUrl1: "rumah1.jpg",
+
+            };
+
+            const marker = L.marker(umkmData.coords).addTo(map);
+
+            
+            marker.bindTooltip(umkmData.name, {
+                permanent: true,
+                direction: "top",
+                className: "marker-tooltip",
+            });
+
+            marker.bindPopup(`
+                    <div class="popup-container">
+                        <div class="popup-header">${umkmData.name}</div>
+                        <div class="popup-rating">⭐ ${umkmData.rating} <span>(${umkmData.reviews})</span></div>
+                        <div class="popup-category">${umkmData.category}</div>
+                        <img src="./rumah.jpg" style="height:200px; width:100%"/>
+                        <div class="popup-address"><i class="fas fa-map-marker-alt"></i> ${umkmData.alamat}</div>
+                        <div class="popup-contact"><i class="fas fa-phone-alt"></i> ${umkmData.phone}</div>
+                    </div>
+                `);
+
+            fetch("./jalanBentengAnjay.geojson")
+                .then((response) => response.json())
+                .then((geojsonData) => {
+                    L.geoJSON(geojsonData, {
+                        style: {
+                            color: "#000",
+                            weight: 3,
+                            opacity: 1,
+                        },
+                    }).addTo(map);
+                })
+                .catch((error) =>
+                    console.error("Error loading jalan GeoJSON:", error)
+                );
+
+           
+            function loadGeoJSON(url, styleOptions) {
+                fetch(url)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Gagal memuat ${url}: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(geojsonData => {
+                        L.geoJSON(geojsonData, {
+                            style: styleOptions,
+                            onEachFeature: function (feature, layer) {
+                                if (feature.properties && feature.properties.nama) {
+                                    layer.bindPopup(`${feature.properties.nama}`);
+                                }
+                            },
+                        }).addTo(map);
+                    })
+                    .catch(`error => console.error(Kesalahan saat memuat ${url}:, error)`);
+            }
+
+            
+            loadGeoJSON("./sekolah.geojson", defaultStyle1);
+            loadGeoJSON("./msjd.geojson", defaultStyle2);
+
+           
+            const geojsonFiles = [
+                { url: "./BentengUtara.geojson", style: { color: "#f0f0f0", weight: 1.5, opacity: 0.8, fillColor: "red", fillOpacity: 0.2 } },
+                { url: "./BentengPusat.geojson", style: { color: "#f0f0f0", weight: 1.5, opacity: 0.8, fillColor: "yellow", fillOpacity: 0.2 } },
+                { url: "./BentengSelatan.geojson", style: { color: "#f0f0f0", weight: 1.5, opacity: 0.8, fillColor: "green", fillOpacity: 0.2 } },
+                { url: "./msjd.geojson", style: { color: "#f0f0f0", weight: 1.5, opacity: 0.8, fillColor: "green", fillOpacity: 0.2 } },
+                { url: "./jalanBentengAnjay.geojson", style: { color: "#333", weight: 3, opacity: 1 } }
+            ];
+
+           
+            geojsonFiles.forEach(file => {
+                loadGeoJSON(file.url, file.style);
+            });
+
+           
+            const baseMaps = {
+                "OpenStreetMap": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
+            };
+
+            const overlayMaps = {
+                "UMKM Marker": marker
+            };
+
+            L.control.layers(baseMaps, overlayMaps, center).addTo(map);
+        });
+    </script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
